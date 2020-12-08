@@ -1,0 +1,77 @@
+@import './fonts';
+@import './variables';
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Anonymous Pro;
+}
+
+button {
+    font-family: Anonymous Pro;
+}
+
+.App {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: Fira Code;
+    }
+
+    header {
+        nav {
+            margin: 0.3em 0.6em;
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+                border: none;
+                background: none;
+                font-size: 1.1em;
+                &:focus {
+                    outline: none;
+                }
+            }
+            button, a {
+                margin: auto .4em;
+            }
+            .theme-toggler {
+                font-size: 1.3em;
+            }
+            .lang-toggler {
+                margin-top: .5em;
+            }
+        }
+        h1,
+        p {
+            text-align: center;
+        }
+        p {
+            font-family: Anonymous Pro;
+        }
+    }
+    section {
+        display: grid;
+        justify-items: center;
+        article {
+            width: 20em;
+        }
+        h2 {
+            text-align: left;
+        }
+    }
+    footer {
+        p {
+            text-align: center;
+        }
+    }
+    button, a {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
