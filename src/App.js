@@ -3,29 +3,17 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from './components/styled-components/GlobalStyles'
 import { lightTheme, darkTheme } from './components/styled-components/Themes'
 import './assets/scss/style.scss'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
     const [theme, setTheme] = useState('dark')
-    const themeToggler = () => {
-        theme === 'dark' ? setTheme('light') : setTheme('dark')
-    }
     return (
         <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
             <>
                 <GlobalStyles />
                 <div className="App">
-                    <header>
-                        <nav>
-                            <a className="lang-toggler">
-                                <span>{theme === 'dark' ? 'Español' : 'English'}</span>
-                            </a>
-                            <button onClick={themeToggler} className="theme-toggler">
-                                {theme === 'dark' ? '💡' : '🌑'}
-                            </button>
-                        </nav>
-                        <h1>Hi!👋 I'm Antonio Ortiz</h1>
-                        <p>I'm a Software Developer 💻</p>
-                    </header>
+                    <Header theme={[theme, setTheme]} />
                     <section>
                         <h2>Projects</h2>
                         <article>
@@ -63,10 +51,7 @@ function App() {
                             </p>
                         </article>
                     </section>
-                    <footer>
-                        <p>Made with ☕ by Antonio Ortiz.</p>
-                        <nav></nav>
-                    </footer>
+                    <Footer />
                 </div>
             </>
         </ThemeProvider>
